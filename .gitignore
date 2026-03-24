@@ -1,0 +1,8 @@
+.env
+*.db
+*.sqlite3
+instance/
+vector_stores/
+uploads/
+__pycache__/
+venv/
