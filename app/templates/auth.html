@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="min-h-[70vh] flex items-center justify-center px-4">
+    <div class="glass-card w-full max-w-md p-8 relative overflow-hidden">
+        
+        <div class="absolute -top-10 -right-10 w-32 h-32 bg-neonCyan/20 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-neonPurple/20 rounded-full blur-3xl"></div>
+
+        <div class="text-center mb-8 relative z-10">
+            <h2 class="text-3xl font-bold text-white mb-2">
+                {% if mode == 'register' %}Create Account{% else %}Welcome Back{% endif %}
+            </h2>
+            <p class="text-gray-400 text-sm">Secure your documents with military-grade privacy.</p>
+        </div>
+
+        <form action="{% if mode == 'register' %}/auth/register{% else %}/auth/login{% endif %}" method="POST" class="space-y-6 relative z-10">
+            <div>
+                <label class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+                <input type="email" name="email" required 
+                    class="w-full bg-deepNight/50 border border-glassBorder rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-neonCyan focus:ring-1 focus:ring-neonCyan transition-all"
+                    placeholder="alex@solopreneur.com">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-300 mb-2">Password</label>
+                <input type="password" name="password" required 
+                    class="w-full bg-deepNight/50 border border-glassBorder rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-neonCyan focus:ring-1 focus:ring-neonCyan transition-all"
+                    placeholder="••••••••">
+            </div>
+
+            <button type="submit" class="w-full py-3 rounded-lg bg-neonCyan text-deepNight font-bold hover:bg-cyan-300 transition-all shadow-[0_0_15px_rgba(6,182,212,0.3)] mt-4">
+                {% if mode == 'register' %}Start Free Audit{% else %}Access Vault{% endif %}
+            </button>
+        </form>
+
+        <div class="mt-6 text-center text-sm text-gray-400 relative z-10">
+            {% if mode == 'register' %}
+                Already have an account? <a href="/login" class="text-neonCyan hover:underline">Log in here</a>
+            {% else %}
+                Don't have an account? <a href="/register" class="text-neonCyan hover:underline">Create one for free</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

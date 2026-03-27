@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto py-10">
+    <div class="mb-8 border-b border-gray-800 pb-5">
+        <h1 class="text-3xl font-semibold text-gray-100 tracking-tight">Account & Legal Identity</h1>
+        <p class="text-gray-400 mt-2 text-sm">Manage your jurisdictional context and AI negotiation parameters.</p>
+    </div>
+
+    <div class="space-y-8">
+        <div class="bg-[#111116] border border-gray-800 rounded-xl p-8 shadow-sm">
+            <h2 class="text-lg font-medium text-gray-200 mb-6 flex items-center">
+                <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path></svg>
+                Jurisdictional Context
+            </h2>
+            
+            <form action="#" method="POST" class="space-y-8">
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pb-8 border-b border-gray-800">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-2">Full Legal Name</label>
+                        <input type="text" name="full_name" class="w-full bg-[#0a0a0f] border border-gray-700 rounded-md px-4 py-2.5 text-gray-200 placeholder-gray-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all sm:text-sm" placeholder="e.g., Jane Doe">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-2">Country of Jurisdiction</label>
+                        <select name="country" class="w-full bg-[#0a0a0f] border border-gray-700 rounded-md px-4 py-2.5 text-gray-200 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all appearance-none sm:text-sm">
+                            <option value="United States">United States</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="India">India</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Germany">Germany</option>
+                            <option value="France">France</option>
+                            <option value="Singapore">Singapore</option>
+                            <option value="United Arab Emirates">United Arab Emirates</option>
+                            <option value="Japan">Japan</option>
+                            <option value="South Africa">South Africa</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-gray-200 mb-6 flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                        Agent Parameters
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Negotiation Posture</label>
+                            <select name="negotiation_style" class="w-full bg-[#0a0a0f] border border-gray-700 rounded-md px-4 py-2.5 text-gray-200 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all appearance-none sm:text-sm">
+                                <option value="Standard Commercial">Standard Commercial</option>
+                                <option value="Collaborative / Mutual">Collaborative / Mutual</option>
+                                <option value="Strict / Protective">Strict / Protective</option>
+                                <option value="Founder Friendly">Founder Friendly</option>
+                                <option value="Enterprise Compliant">Enterprise Compliant</option>
+                                <option value="Investor Friendly">Investor Friendly</option>
+                                <option value="Maximum Risk Mitigation">Maximum Risk Mitigation</option>
+                                <option value="Neutral / Objective">Neutral / Objective</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Output Format & Tone</label>
+                            <select name="jargon_filter" class="w-full bg-[#0a0a0f] border border-gray-700 rounded-md px-4 py-2.5 text-gray-200 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all appearance-none sm:text-sm">
+                                <option value="Standard Legal English">Standard Legal English</option>
+                                <option value="Plain English (Simplified)">Plain English (Simplified)</option>
+                                <option value="Executive Summary">Executive Summary</option>
+                                <option value="Bullet Point Breakdown">Bullet Point Breakdown</option>
+                                <option value="Academic Law">Academic Law</option>
+                                <option value="Non-Native Speaker (Clear)">Non-Native Speaker (Clear & Direct)</option>
+                                <option value="Action-Oriented">Action-Oriented (Next Steps)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-4">
+                    <button type="submit" class="px-6 py-2.5 rounded-md bg-white text-black font-medium hover:bg-gray-200 transition-all text-sm">
+                        Save Preferences
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="bg-[#1a0f11] border border-red-900/50 rounded-xl p-8">
+            <h2 class="text-lg font-medium text-red-500 mb-2 flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                Data Retention & Privacy
+            </h2>
+            <p class="text-gray-400 text-sm mb-6 max-w-3xl leading-relaxed">
+                ContractHawk operates on a zero-trust privacy model. Clicking the button below will permanently purge your account, all associated document metadata, and AI vector embeddings from our servers. This action is immediate and irrevocable.
+            </p>
+            <a href="/auth/logout" class="inline-block px-6 py-2.5 rounded-md border border-red-800 text-red-500 font-medium hover:bg-red-950 hover:text-red-400 transition-all text-sm">
+                Permanently Delete Account
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

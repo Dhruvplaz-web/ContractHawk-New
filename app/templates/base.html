@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContractHawk | AI Legal Defense</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepNight: '#0a0a0f',
+                        glassPanel: 'rgba(20, 20, 30, 0.6)',
+                        glassBorder: 'rgba(255, 255, 255, 0.1)',
+                        neonCyan: '#06b6d4',
+                        neonPurple: '#a855f7'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Glassmorphism utility class */
+        .glass-card {
+            background: rgba(20, 20, 30, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-deepNight text-white font-sans min-h-screen flex flex-col selection:bg-neonCyan selection:text-deepNight">
+
+    <nav class="border-b border-glassBorder bg-deepNight/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <svg class="w-8 h-8 text-neonCyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                <span class="text-xl font-bold tracking-tight text-white">Contract<span class="text-neonCyan">Hawk</span></span>
+            </div>
+
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-300 items-center">
+                <a href="/" class="hover:text-neonCyan transition-colors">Home</a>
+                <a href="/reviews" class="hover:text-neonCyan transition-colors">Reviews</a>
+                
+                {% if session.get('user_id') %}
+                    <a href="/dashboard" class="hover:text-neonCyan transition-colors font-bold">Command Center</a>
+                    <a href="/profile" class="hover:text-neonCyan transition-colors">Profile</a>
+                    <a href="/auth/logout" class="px-5 py-2 rounded-full border border-red-500/50 text-red-400 hover:bg-red-500/10 transition-all">Log Out</a>
+                {% else %}
+                    <a href="/login" class="hover:text-neonCyan transition-colors">Log In</a>
+                    <a href="/register" class="px-5 py-2 rounded-full bg-neonCyan text-deepNight font-bold hover:shadow-[0_0_15px_rgba(6,182,212,0.4)] transition-all">Start Free Audit</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow p-4">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="border-t border-glassBorder mt-12 py-8 text-center text-gray-500 text-sm">
+        <p>&copy; 2026 ContractHawk. Innovate Maharashtra Hackathon.</p>
+    </footer>
+
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

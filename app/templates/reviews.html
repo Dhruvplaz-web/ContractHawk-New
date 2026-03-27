@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto py-6">
+    
+    <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-white mb-4">Wall of Trust</h1>
+        <p class="text-gray-400 max-w-2xl mx-auto">See how ContractHawk is protecting freelancers and small businesses from predatory legal traps.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        
+        <div class="lg:col-span-1">
+            <div class="glass-card p-8 sticky top-24">
+                <h3 class="text-xl font-bold text-white mb-6 border-b border-glassBorder pb-4">Rate Your Experience</h3>
+                
+                <form action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Rating</label>
+                        <div class="flex space-x-2 text-2xl text-gray-600 cursor-pointer">
+                            <span class="hover:text-yellow-400 transition-colors">★</span>
+                            <span class="hover:text-yellow-400 transition-colors">★</span>
+                            <span class="hover:text-yellow-400 transition-colors">★</span>
+                            <span class="hover:text-yellow-400 transition-colors">★</span>
+                            <span class="hover:text-yellow-400 transition-colors">★</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Name or Alias</label>
+                        <input type="text" required 
+                            class="w-full bg-deepNight/50 border border-glassBorder rounded-lg px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-neonCyan transition-all"
+                            placeholder="Alex M.">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Profession</label>
+                        <select class="w-full bg-deepNight/50 border border-glassBorder rounded-lg px-4 py-2 text-white focus:outline-none focus:border-neonCyan transition-all appearance-none">
+                            <option value="freelancer">Freelance Developer</option>
+                            <option value="designer">Graphic Designer</option>
+                            <option value="tenant">Residential Tenant</option>
+                            <option value="other">Other Small Business</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Your Review</label>
+                        <textarea required rows="4"
+                            class="w-full bg-deepNight/50 border border-glassBorder rounded-lg px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-neonCyan transition-all"
+                            placeholder="ContractHawk caught a perpetual IP license in my NDA..."></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-3 rounded-lg bg-neonCyan text-deepNight font-bold hover:bg-cyan-300 transition-all shadow-[0_0_15px_rgba(6,182,212,0.3)]">
+                        Post Review
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-6">
+            
+            <div class="glass-card p-6 border-l-4 border-l-neonCyan">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h4 class="text-white font-bold text-lg">Saved me from a toxic NDA</h4>
+                        <p class="text-xs text-neonCyan font-mono mt-1">Freelance Software Engineer</p>
+                    </div>
+                    <div class="text-yellow-400 text-lg">★★★★★</div>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    "I almost signed a contract that would have given my client ownership of code I wrote prior to meeting them. The engine caught the 'perpetual assignment' clause in 4 seconds and rewrote it. Worth its weight in gold."
+                </p>
+            </div>
+
+            <div class="glass-card p-6 border-l-4 border-l-neonPurple">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h4 class="text-white font-bold text-lg">Found the hidden deposit trap</h4>
+                        <p class="text-xs text-neonPurple font-mono mt-1">Apartment Tenant</p>
+                    </div>
+                    <div class="text-yellow-400 text-lg">★★★★★</div>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    "My landlord buried a clause on page 14 saying the security deposit was non-refundable for 'administrative overhead'. ContractHawk flagged it as a high-severity threat. I negotiated it out before signing."
+                </p>
+            </div>
+
+            <div class="glass-card p-6 border-l-4 border-l-neonCyan">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h4 class="text-white font-bold text-lg">Like having a lawyer on retainer</h4>
+                        <p class="text-xs text-neonCyan font-mono mt-1">Graphic Designer</p>
+                    </div>
+                    <div class="text-yellow-400 text-lg">★★★★☆</div>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    "The neutralization lab is insane. Instead of just telling me what's wrong, it actually gives me the exact text to reply to my client with. Taking off one star only because I want to upload multiple files at once!"
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

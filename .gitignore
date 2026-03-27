@@ -1,8 +1,13 @@
-.env
-*.db
-*.sqlite3
-instance/
-vector_stores/
-uploads/
+# Python
 __pycache__/
+*.py[cod]
+*$py.class
 venv/
+.env
+
+# Database
+app/contracthawk.db
+instance/
+
+# Uploads
+uploads/

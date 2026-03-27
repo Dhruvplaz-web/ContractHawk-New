@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto py-12 text-center">
+    
+    <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6">
+        Never Sign a <span class="text-transparent bg-clip-text bg-gradient-to-r from-neonCyan to-neonPurple">Predatory Contract</span> Again.
+    </h1>
+    
+    <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-10">
+        ContractHawk uses AI to instantly find and neutralize hidden traps in your NDAs, leases, and freelance agreements. Protect your rights before you sign.
+    </p>
+    
+    <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+        <a href="/register" class="px-8 py-4 rounded-lg bg-neonCyan text-deepNight font-bold text-lg hover:bg-cyan-300 transition-all shadow-[0_0_20px_rgba(6,182,212,0.4)] w-full sm:w-auto">
+            Start Free Audit
+        </a>
+        <a href="/dashboard" class="px-8 py-4 rounded-lg border border-glassBorder bg-glassPanel text-white font-bold text-lg hover:border-neonCyan transition-all w-full sm:w-auto">
+            View Live Demo
+        </a>
+    </div>
+
+    <div class="mt-16 glass-card p-6 border-l-4 border-l-neonPurple max-w-3xl mx-auto text-left relative overflow-hidden">
+        <div class="absolute -right-10 -top-10 w-32 h-32 bg-neonPurple/10 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <h3 class="text-neonPurple font-mono text-sm font-bold mb-4 uppercase tracking-wider flex items-center">
+            <svg class="w-4 h-4 mr-2 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            Live Threat Intel
+        </h3>
+        <div class="space-y-3">
+            {% for news in dynamic_news %}
+            <div class="flex items-start">
+                <span class="text-gray-500 mr-3">>></span>
+                <p class="text-gray-300 text-sm">{{ news }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+{% endblock %}
